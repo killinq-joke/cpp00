@@ -21,7 +21,6 @@ std::string	strformat(std::string str)
 	cpy = str.substr(0, 10);
 	if (i > 10)
 		cpy[9] = '.';
-	// std::cout << cpy;
 	return (cpy);
 }
 
