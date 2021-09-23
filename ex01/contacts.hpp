@@ -6,7 +6,7 @@
 /*   By: ztouzri <ztouzri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/02 19:58:11 by ztouzri           #+#    #+#             */
-/*   Updated: 2021/08/16 19:01:32 by ztouzri          ###   ########.fr       */
+/*   Updated: 2021/09/23 17:10:20 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define CONTACTS_HPP
 # include <string>
 # include <iostream>
+# include <iomanip>
 
 class Contact {
 

@@ -6,30 +6,23 @@
 /*   By: ztouzri <ztouzri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 11:09:32 by ztouzri           #+#    #+#             */
-/*   Updated: 2021/08/17 14:02:41 by ztouzri          ###   ########.fr       */
+/*   Updated: 2021/09/23 21:58:49by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "contacts.hpp"
 
-void	strformat(std::string str)
+std::string	strformat(std::string str)
 {
 	std::string cpy;
 	int	i;
 
 	i = str.size();
 	cpy = str.substr(0, 10);
-	if (i <= 10)
-	{
-		while (i < 10)
-		{
-			std::cout << " ";
-			i++;
-		}
-	}
-	else
+	if (i > 10)
 		cpy[9] = '.';
-	std::cout << cpy;
+	// std::cout << cpy;
+	return (cpy);
 }
 
 std::string	readString(std::istream& stream)
@@ -74,17 +67,14 @@ int		serviceSEARCH(PhoneBook *phonebook)
 	int			index;
 	std::string	strindex;
 
-	std::cout << "     index| firstname|  lastname|  nickname|" << std::endl;
+	std::cout << std::setw(10) << "index" << "|" << std::setw(10) << "firstname" << "|" << std::setw(10) << "lastname" << "|" << std::setw(10) << "nickname" << std::endl;
 	i = 0;
 	while (i < phonebook->contactnum)
 	{
-		strformat(std::to_string(i + 1));
-		std::cout << "|";
-		strformat(phonebook->contacts[i].getFirstName());
-		std::cout << "|";
-		strformat(phonebook->contacts[i].getLastName());
-		std::cout << "|";
-		strformat(phonebook->contacts[i].getNickName());
+		std::cout << std::setw(10) << strformat(std::to_string(i + 1));
+		std::cout << "|" << std::setw(10) << strformat(phonebook->contacts[i].getFirstName());
+		std::cout << "|" << std::setw(10) << strformat(phonebook->contacts[i].getLastName());
+		std::cout << "|" << std::setw(10) << strformat(phonebook->contacts[i].getNickName());
 		std::cout << "|" << std::endl;
 		i++;
 	}
